@@ -1,0 +1,26 @@
+<%= form_with scope: :note, url: notes_path, local: true do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+    <%= f.fields_for :tags_attributes do |t| %>
+    <p>
+      <%= label_tag(:name, "Add a tag") %><br>
+      <%= t.text_field :name %>
+      
+    </p>    
+
+    <% end %>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<div id= "tag-displayer">
+   <span id= "tags"></span>
+</div>

@@ -1,0 +1,5 @@
+<% if @notes.present? %>
+   <% @notes.each do |note| %>
+      <%= note.title %>
+   <% end %>
+<% end %>
